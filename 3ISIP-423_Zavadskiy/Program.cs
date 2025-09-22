@@ -69,6 +69,14 @@ class Program
                 if (parts.Length == 2 &&
                     decimal.TryParse(parts[1].Trim(), out decimal amount) &&
                     amount > 0)
+                {
+                    expenses.Add(new Expense
+                    {
+                        Name = parts[0].Trim(),   
+                        Amount = amount           
+                    });
+                    break;
+                }
             }
         }
     }
