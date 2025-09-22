@@ -102,6 +102,12 @@ class Program
     }
     static void ShowStats(List<Expense> expenses)
     {
+        Console.WriteLine("\n=== СТАТИСТИКА РАСХОДОВ ===");
 
+        if (!expenses.Any())
+        {
+            Console.WriteLine("Нет данных для статистики.");
+            return;
+        }
     }
 }
