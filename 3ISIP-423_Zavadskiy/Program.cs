@@ -31,6 +31,16 @@ class Program
             Console.WriteLine("0. Выйти из программы");
 
             int choice = GetNumber("Выберите пункт меню: ", 0, 5);
+
+            switch (choice)
+            {
+                case 1: ShowExpenses(expenses); break;      // Показать все расходы
+                case 2: ShowStats(expenses); break;         // Показать статистику
+                case 3: SortExpenses(expenses); break;      // Отсортировать
+                case 4: ConvertCurrency(expenses); break;   // Конвертировать валюту
+                case 5: SearchExpenses(expenses); break;    // Поиск по названию
+                case 0: return;                            // Выход из программы
+            }
         }
     }
 }
