@@ -96,5 +96,8 @@ class Program
         {
             Console.WriteLine($"{i + 1}. {expenses[i]}");
         }
+
+        decimal total = expenses.Sum(e => e.Amount);
+        Console.WriteLine($"\n Общая сумма: {total} руб.");
     }
 }
