@@ -4,8 +4,8 @@ using System.Linq;
 
 class Expense
 {
-    public string Name { get; set; }    // Название товара или услуги
-    public decimal Amount { get; set; } // Сумма в рублях
+    public string Name { get; set; }    
+    public decimal Amount { get; set; } 
     public override string ToString() => $"{Name}; {Amount} руб.";
 }
 
@@ -34,12 +34,12 @@ class Program
 
             switch (choice)
             {
-                case 1: ShowExpenses(expenses); break;      // Показать все расходы
-                case 2: ShowStats(expenses); break;         // Показать статистику
-                case 3: SortExpenses(expenses); break;      // Отсортировать
-                case 4: ConvertCurrency(expenses); break;   // Конвертировать валюту
-                case 5: SearchExpenses(expenses); break;    // Поиск по названию
-                case 0: return;                            // Выход из программы
+                case 1: ShowExpenses(expenses); break;     
+                case 2: ShowStats(expenses); break;         
+                case 3: SortExpenses(expenses); break;      
+                case 4: ConvertCurrency(expenses); break;   
+                case 5: SearchExpenses(expenses); break;   
+                case 0: return;                            
             }
         }
     }
@@ -48,18 +48,28 @@ class Program
         int number;
         do
         {
-            Console.Write(message); // Показываем сообщение с просьбой ввода
-            // Повторяем до тех пор, пока не получим правильное число
+            Console.Write(message);
         } while (!int.TryParse(Console.ReadLine(), out number) || number < min || number > max);
         return number;
     }
     static List<Expense> InputExpenses(int count)
     {
-        var expenses = new List<Expense>(); // Создаем пустой список для хранения расходов
+        var expenses = new List<Expense>(); 
         Console.WriteLine($"\nВведите {count} операций в формате: Название; Сумма");
         Console.WriteLine("Пример: Кофе; 150");
 
         for (int i = 0; i < count; i++)
+        {
+            while (true)
+            {
+                Console.Write($"{i + 1}. ");
+                string input = Console.ReadLine();
+                string[] parts = input.Split(';');
 
+                if (parts.Length == 2 &&
+                    decimal.TryParse(parts[1].Trim(), out decimal amount) &&
+                    amount > 0)
+            }
+        }
     }
 }
