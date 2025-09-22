@@ -126,4 +126,11 @@ class Program
         Console.WriteLine($" Минимум: {minExpense.Name} - {min} руб.");
     }
     static void SortExpenses(List<Expense> expenses)
+    {
+        Console.WriteLine("\n=== СОРТИРОВКА ===");
+        Console.WriteLine("1. От дешевых к дорогим");
+        Console.WriteLine("2. От дорогих к дешевым");
+
+        int type = GetNumber("Выберите тип сортировки: ", 1, 2);
+    }
 }
