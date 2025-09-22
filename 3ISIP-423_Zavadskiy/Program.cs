@@ -91,5 +91,10 @@ class Program
             Console.WriteLine("Нет данных о расходах.");
             return;
         }
+
+        for (int i = 0; i < expenses.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {expenses[i]}");
+        }
     }
 }
