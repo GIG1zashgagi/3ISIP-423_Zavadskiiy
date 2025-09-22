@@ -43,4 +43,5 @@ class Program
             }
         }
     }
+    static int GetNumber(string message, int min, int max)
 }
