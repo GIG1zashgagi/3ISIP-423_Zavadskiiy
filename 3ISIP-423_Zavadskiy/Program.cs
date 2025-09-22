@@ -21,5 +21,14 @@ class Program
         var expenses = InputExpenses(count);
 
         while (true)
+        {
+            Console.WriteLine("\n=== ГЛАВНОЕ МЕНЮ ===");
+            Console.WriteLine("1. Показать все расходы");
+            Console.WriteLine("2. Посмотреть статистику");
+            Console.WriteLine("3. Отсортировать по цене");
+            Console.WriteLine("4. Конвертировать в другую валюту");
+            Console.WriteLine("5. Найти покупку по названию");
+            Console.WriteLine("0. Выйти из программы");
+        }
     }
 }
