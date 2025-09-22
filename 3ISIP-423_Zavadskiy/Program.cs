@@ -178,5 +178,7 @@ class Program
             Console.Write("Введите символ валюты: ");
             symbol = Console.ReadLine();
         }
+
+        decimal rate = GetNumber("Введите курс рубля к выбранной валюте: ", 1, 1000);
     }
 }
