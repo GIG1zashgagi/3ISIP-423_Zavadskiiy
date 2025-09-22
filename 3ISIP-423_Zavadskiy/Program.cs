@@ -109,5 +109,16 @@ class Program
             Console.WriteLine("Нет данных для статистики.");
             return;
         }
+
+        decimal total = expenses.Sum(e => e.Amount);      // Общая сумма
+        decimal average = expenses.Average(e => e.Amount); // Средний расход
+        decimal max = expenses.Max(e => e.Amount);        
+        decimal min = expenses.Min(e => e.Amount);
+
+        Console.WriteLine($" Всего потрачено: {total} руб.");
+        Console.WriteLine($" Средний чек: {average:F2} руб.");
+        Console.WriteLine($" Самая дорогая покупка: {max} руб.");
+        Console.WriteLine($" Самая дешевая покупка: {min} руб.");
+
     }
 }
