@@ -77,7 +77,10 @@ class Program
                     });
                     break;
                 }
+                Console.WriteLine("Ошибка! Используйте формат: Название; Сумма");
             }
         }
+        return expenses;
     }
+    static void ShowExpenses(List<Expense> expenses)
 }
