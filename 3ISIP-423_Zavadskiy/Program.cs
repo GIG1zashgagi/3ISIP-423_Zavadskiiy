@@ -54,4 +54,7 @@ class Program
         return number;
     }
     static List<Expense> InputExpenses(int count)
+    {
+
+    }
 }
