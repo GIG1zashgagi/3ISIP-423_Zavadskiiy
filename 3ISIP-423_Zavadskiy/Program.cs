@@ -17,5 +17,7 @@ class Program
 
         Console.WriteLine("=== УЧЕТ РАСХОДОВ ===");
         int count = GetNumber("Введите количество операций (2-40): ", 2, 40);
+
+        var expenses = InputExpenses(count);
     }
 }
