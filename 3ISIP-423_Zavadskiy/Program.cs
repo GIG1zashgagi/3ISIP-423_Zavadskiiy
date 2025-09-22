@@ -187,5 +187,8 @@ class Program
             decimal converted = expense.Amount / rate;
             Console.WriteLine($"{expense.Name}; {converted:F2} {symbol}");
         }
+
+        decimal totalConverted = expenses.Sum(e => e.Amount) / rate;
+        Console.WriteLine($"\n💵 Общая сумма: {totalConverted:F2} {symbol}");
     }
 }
