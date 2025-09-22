@@ -83,4 +83,13 @@ class Program
         return expenses;
     }
     static void ShowExpenses(List<Expense> expenses)
+    {
+        Console.WriteLine("\n=== ВАШИ РАСХОДЫ ===");
+
+        if (!expenses.Any())
+        {
+            Console.WriteLine("Нет данных о расходах.");
+            return;
+        }
+    }
 }
