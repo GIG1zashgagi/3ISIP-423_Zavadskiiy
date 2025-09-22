@@ -180,5 +180,12 @@ class Program
         }
 
         decimal rate = GetNumber("Введите курс рубля к выбранной валюте: ", 1, 1000);
+
+        Console.WriteLine($"\n=== РАСХОДЫ В {symbol} ===");
+        foreach (var expense in expenses)
+        {
+            decimal converted = expense.Amount / rate;
+            Console.WriteLine($"{expense.Name}; {converted:F2} {symbol}");
+        }
     }
 }
