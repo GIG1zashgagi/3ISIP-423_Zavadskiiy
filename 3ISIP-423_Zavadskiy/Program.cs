@@ -155,4 +155,14 @@ class Program
         ShowExpenses(expenses);
     }
     static void ConvertCurrency(List<Expense> expenses)
+    {
+        Console.WriteLine("\n=== КОНВЕРТАЦИЯ ВАЛЮТЫ ===");
+        Console.WriteLine("Выберите валюту:");
+        Console.WriteLine("1. Доллар США ($)");
+        Console.WriteLine("2. Евро (€)");
+        Console.WriteLine("3. Фунт стерлингов (£)");
+        Console.WriteLine("4. Другая валюта");
+
+        int choice = GetNumber("Ваш выбор: ", 1, 4);
+    }
 }
