@@ -44,4 +44,14 @@ class Program
         }
     }
     static int GetNumber(string message, int min, int max)
+    {
+        int number;
+        do
+        {
+            Console.Write(message); // Показываем сообщение с просьбой ввода
+            // Повторяем до тех пор, пока не получим правильное число
+        } while (!int.TryParse(Console.ReadLine(), out number) || number < min || number > max);
+        return number;
+    }
+    static List<Expense> InputExpenses(int count)
 }
