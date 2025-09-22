@@ -172,5 +172,11 @@ class Program
             3 => "£",
             _ => "" 
         };
+
+        if (choice == 4)
+        {
+            Console.Write("Введите символ валюты: ");
+            symbol = Console.ReadLine();
+        }
     }
 }
