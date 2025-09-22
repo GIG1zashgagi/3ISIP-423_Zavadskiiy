@@ -100,4 +100,8 @@ class Program
         decimal total = expenses.Sum(e => e.Amount);
         Console.WriteLine($"\n Общая сумма: {total} руб.");
     }
+    static void ShowStats(List<Expense> expenses)
+    {
+
+    }
 }
