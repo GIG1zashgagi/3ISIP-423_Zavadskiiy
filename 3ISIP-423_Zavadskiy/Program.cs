@@ -164,5 +164,13 @@ class Program
         Console.WriteLine("4. Другая валюта");
 
         int choice = GetNumber("Ваш выбор: ", 1, 4);
+
+        string symbol = choice switch
+        {
+            1 => "$",
+            2 => "€",
+            3 => "£",
+            _ => "" // Для другой валюты
+        };
     }
 }
