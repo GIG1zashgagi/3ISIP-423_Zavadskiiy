@@ -55,6 +55,11 @@ class Program
     }
     static List<Expense> InputExpenses(int count)
     {
+        var expenses = new List<Expense>(); // Создаем пустой список для хранения расходов
+        Console.WriteLine($"\nВведите {count} операций в формате: Название; Сумма");
+        Console.WriteLine("Пример: Кофе; 150");
+
+        for (int i = 0; i < count; i++)
 
     }
 }
