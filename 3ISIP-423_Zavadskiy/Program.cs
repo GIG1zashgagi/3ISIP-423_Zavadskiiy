@@ -29,6 +29,8 @@ class Program
             Console.WriteLine("4. Конвертировать в другую валюту");
             Console.WriteLine("5. Найти покупку по названию");
             Console.WriteLine("0. Выйти из программы");
+
+            int choice = GetNumber("Выберите пункт меню: ", 0, 5);
         }
     }
 }
