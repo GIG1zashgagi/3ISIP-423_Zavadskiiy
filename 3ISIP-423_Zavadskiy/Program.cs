@@ -132,5 +132,27 @@ class Program
         Console.WriteLine("2. От дорогих к дешевым");
 
         int type = GetNumber("Выберите тип сортировки: ", 1, 2);
+
+        for (int i = 0; i < expenses.Count - 1; i++)
+        {
+            for (int j = 0; j < expenses.Count - 1 - i; j++)
+            {
+                bool needSwap = false;
+                if (type == 1)
+                    needSwap = expenses[j].Amount > expenses[j + 1].Amount;
+                else
+                    needSwap = expenses[j].Amount < expenses[j + 1].Amount;
+
+                if (needSwap)
+                {
+                    var temp = expenses[j];
+                    expenses[j] = expenses[j + 1];
+                    expenses[j + 1] = temp;
+                }
+            }
+        }
+        Console.WriteLine(" Сортировка завершена!");
+        ShowExpenses(expenses);
     }
+    static void ConvertCurrency(List<Expense> expenses)
 }
