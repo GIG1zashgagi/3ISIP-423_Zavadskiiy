@@ -125,4 +125,5 @@ class Program
         Console.WriteLine($" Максимум: {maxExpense.Name} - {max} руб.");
         Console.WriteLine($" Минимум: {minExpense.Name} - {min} руб.");
     }
+    static void SortExpenses(List<Expense> expenses)
 }
