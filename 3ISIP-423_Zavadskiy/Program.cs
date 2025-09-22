@@ -6,7 +6,16 @@ class Expense
 {
     public string Name { get; set; }    // Название товара или услуги
     public decimal Amount { get; set; } // Сумма в рублях
-
-    // Метод для красивого вывода информации о расходе
     public override string ToString() => $"{Name}; {Amount} руб.";
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+        Console.WriteLine("=== УЧЕТ РАСХОДОВ ===");
+        int count = GetNumber("Введите количество операций (2-40): ", 2, 40);
+    }
 }
