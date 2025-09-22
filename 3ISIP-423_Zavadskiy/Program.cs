@@ -120,5 +120,9 @@ class Program
         Console.WriteLine($" Самая дорогая покупка: {max} руб.");
         Console.WriteLine($" Самая дешевая покупка: {min} руб.");
 
+        var maxExpense = expenses.First(e => e.Amount == max);
+        var minExpense = expenses.First(e => e.Amount == min);
+        Console.WriteLine($" Максимум: {maxExpense.Name} - {max} руб.");
+        Console.WriteLine($" Минимум: {minExpense.Name} - {min} руб.");
     }
 }
