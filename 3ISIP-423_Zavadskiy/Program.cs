@@ -131,5 +131,22 @@ namespace ShopInventory
             var foundProducts = products.Where(p => p.Category == category).ToList();
             DisplaySearchResults(foundProducts, $"по категории '{category}'");
         }
+
+        private void DisplaySearchResults(List<Product> foundProducts, string searchCriteria)
+        {
+            if (foundProducts.Any())
+            {
+                Console.WriteLine($"\n Найдено товаров {searchCriteria}: {foundProducts.Count}");
+                Console.WriteLine("=========================================");
+                foreach (var product in foundProducts)
+                {
+                    Console.WriteLine(product);
+                }
+            }
+            else
+            {
+                Console.WriteLine($"❌ Товары {searchCriteria} не найдены.");
+            }
+        }
     }
 }
