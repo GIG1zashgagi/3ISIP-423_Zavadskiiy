@@ -75,5 +75,19 @@ namespace ShopInventory
                 Console.WriteLine($" Товар с кодом {code} не найден.");
             }
         }
+
+        public void OrderSupply(string code, int quantity)
+        {
+            Product product = products.FirstOrDefault(p => p.Code == code);
+            if (product != null)
+            {
+                product.Quantity += quantity;
+                Console.WriteLine($" Поставка выполнена. Новое количество товара '{product.Name}': {product.Quantity}");
+            }
+            else
+            {
+                Console.WriteLine($" Товар с кодом {code} не найден.");
+            }
+        }
     }
 }
