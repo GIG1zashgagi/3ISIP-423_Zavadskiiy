@@ -192,4 +192,13 @@ class Program
         Console.WriteLine($"\n Общая сумма: {totalConverted:F2} {symbol}");
     }
     static void SearchExpenses(List<Expense> expenses)
+    {
+        Console.WriteLine("\n=== ПОИСК ПОКУПОК ===");
+        Console.Write("Введите название для поиска: ");
+        string search = Console.ReadLine().ToLower();
+
+        var results = expenses
+            .Where(e => e.Name.ToLower().Contains(search))
+            .ToList();
+    }
 }
