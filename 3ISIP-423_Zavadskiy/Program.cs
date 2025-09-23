@@ -48,5 +48,11 @@ namespace ShopInventory
             products = new List<Product>();
             nextProductId = 1001;
         }
+
+        private string GenerateProductCode()
+        {
+            string code = "1" + nextProductId++.ToString("D4").Substring(1);
+            return code;
+        }
     }
 }
