@@ -106,13 +106,19 @@ namespace ShopInventory
                 }
                 else
                 {
-                    Console.WriteLine($"❌ Недостаточно товара на складе. Доступно: {product.Quantity}");
+                    Console.WriteLine($" Недостаточно товара на складе. Доступно: {product.Quantity}");
                 }
             }
             else
             {
-                Console.WriteLine($"❌ Товар с кодом {code} не найден.");
+                Console.WriteLine($" Товар с кодом {code} не найден.");
             }
+        }
+
+        public void SearchByCode(string code)
+        {
+            var foundProducts = products.Where(p => p.Code == code).ToList();
+            DisplaySearchResults(foundProducts, $"по коду '{code}'");
         }
     }
 }
