@@ -89,5 +89,30 @@ namespace ShopInventory
                 Console.WriteLine($" Товар с кодом {code} не найден.");
             }
         }
+
+        public void SellProduct(string code, int quantity)
+        {
+            Product product = products.FirstOrDefault(p => p.Code == code);
+            if (product != null)
+            {
+                if (product.Quantity >= quantity)
+                {
+                    product.Quantity -= quantity;
+                    decimal totalPrice = product.Price * quantity;
+                    Console.WriteLine($" Продажа выполнена.");
+                    Console.WriteLine($" Продано {quantity} шт. товара '{product.Name}'");
+                    Console.WriteLine($" Общая стоимость: {totalPrice:C}");
+                    Console.WriteLine($" Остаток на складе: {product.Quantity}");
+                }
+                else
+                {
+                    Console.WriteLine($"❌ Недостаточно товара на складе. Доступно: {product.Quantity}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"❌ Товар с кодом {code} не найден.");
+            }
+        }
     }
 }
