@@ -200,5 +200,7 @@ class Program
         var results = expenses
             .Where(e => e.Name.ToLower().Contains(search))
             .ToList();
+
+        if (results.Any())
     }
 }
