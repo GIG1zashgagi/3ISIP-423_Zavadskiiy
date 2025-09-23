@@ -148,5 +148,23 @@ namespace ShopInventory
                 Console.WriteLine($"❌ Товары {searchCriteria} не найдены.");
             }
         }
+
+        public void DisplayAllProducts()
+        {
+            if (products.Any())
+            {
+                Console.WriteLine("\n ВСЕ ТОВАРЫ В ИНВЕНТАРЕ");
+                Console.WriteLine("=========================================");
+                foreach (var product in products)
+                {
+                    Console.WriteLine(product);
+                }
+                Console.WriteLine($" Всего товаров: {products.Count}");
+            }
+            else
+            {
+                Console.WriteLine(" Инвентарь пуст.");
+            }
+        }
     }
 }
