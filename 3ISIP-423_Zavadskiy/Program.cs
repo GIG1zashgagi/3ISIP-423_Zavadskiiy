@@ -62,5 +62,18 @@ namespace ShopInventory
             Console.WriteLine($" Товар добавлен: {newProduct}");
         }
 
+        public void RemoveProduct(string code)
+        {
+            Product product = products.FirstOrDefault(p => p.Code == code);
+            if (product != null)
+            {
+                products.Remove(product);
+                Console.WriteLine($" Товар с кодом {code} удален.");
+            }
+            else
+            {
+                Console.WriteLine($" Товар с кодом {code} не найден.");
+            }
+        }
     }
 }
