@@ -15,13 +15,12 @@ namespace ShopInventory
 
     public class Product
     {
-        // Свойства товара
-        public string Code { get; set; }       
-        public string Name { get; set; }         
-        public decimal Price { get; set; }         
-        public int Quantity { get; set; }          
-        public bool InStock => Quantity > 0;       
-        public ProductCategory Category { get; set; } 
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Quantity { get; set; }
+        public bool InStock => Quantity > 0;
+        public ProductCategory Category { get; set; }
 
         public Product(string code, string name, decimal price, int quantity, ProductCategory category)
         {
@@ -34,14 +33,15 @@ namespace ShopInventory
 
         public override string ToString()
         {
-            return $"Код: {Code}, " + $"Название: {Name}, Цена: {Price:C}, Количество: {Quantity}, " + $"В наличии: {(InStock ? "Да" : "Нет")}, Категория: {Category}";
+            return $"Код: {Code}, Название: {Name}, Цена: {Price:C}, Количество: {Quantity}, " +
+                   $"В наличии: {(InStock ? "Да" : "Нет")}, Категория: {Category}";
         }
     }
 
     public class InventoryManager
     {
-        private List<Product> products;     
-        private int nextProductId;        
+        private List<Product> products;
+        private int nextProductId;
 
         public InventoryManager()
         {
@@ -51,8 +51,16 @@ namespace ShopInventory
 
         private string GenerateProductCode()
         {
-            string code = "1" + nextProductId++.ToString("D4").Substring(1);
-            return code;
+            return "1" + (nextProductId++).ToString("D4").Substring(1);
         }
+
+        public void AddProduct(string name, decimal price, int quantity, ProductCategory category)
+        {
+            string code = GenerateProductCode();
+            Product newProduct = new Product(code, name, price, quantity, category);
+            products.Add(newProduct);
+            Console.WriteLine($" Товар добавлен: {newProduct}");
+        }
+
     }
 }
