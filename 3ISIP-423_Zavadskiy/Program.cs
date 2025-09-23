@@ -145,7 +145,7 @@ namespace ShopInventory
             }
             else
             {
-                Console.WriteLine($"❌ Товары {searchCriteria} не найдены.");
+                Console.WriteLine($" Товары {searchCriteria} не найдены.");
             }
         }
 
@@ -165,6 +165,22 @@ namespace ShopInventory
             {
                 Console.WriteLine(" Инвентарь пуст.");
             }
+        }
+
+        public Product GetProductByCode(string code)
+        {
+            return products.FirstOrDefault(p => p.Code == code);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InventoryManager inventory = new InventoryManager();
+            bool running = true;
+
+            Console.WriteLine(" === СИСТЕМА УЧЕТА ТОВАРОВ В МАГАЗИНЕ ===\n");
         }
     }
 }
