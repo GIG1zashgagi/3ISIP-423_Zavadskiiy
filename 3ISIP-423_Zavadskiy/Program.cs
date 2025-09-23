@@ -126,5 +126,10 @@ namespace ShopInventory
             var foundProducts = products.Where(p => p.Name.ToLower().Contains(name.ToLower())).ToList();
             DisplaySearchResults(foundProducts, $"по названию '{name}'");
         }
+        public void SearchByCategory(ProductCategory category)
+        {
+            var foundProducts = products.Where(p => p.Category == category).ToList();
+            DisplaySearchResults(foundProducts, $"по категории '{category}'");
+        }
     }
 }
