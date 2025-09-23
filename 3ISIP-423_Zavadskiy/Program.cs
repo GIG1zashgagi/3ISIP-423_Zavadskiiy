@@ -16,16 +16,15 @@ namespace ShopInventory
     public class Product
     {
         // Свойства товара
-        public string Code { get; set; }           // Уникальный код
-        public string Name { get; set; }           // Название
-        public decimal Price { get; set; }         // Цена
-        public int Quantity { get; set; }          // Количество
-        public bool InStock => Quantity > 0;       // Автоматическое свойство наличия
-        public ProductCategory Category { get; set; } // Категория
+        public string Code { get; set; }       
+        public string Name { get; set; }         
+        public decimal Price { get; set; }         
+        public int Quantity { get; set; }          
+        public bool InStock => Quantity > 0;       
+        public ProductCategory Category { get; set; } 
 
         public Product(string code, string name, decimal price, int quantity, ProductCategory category)
         {
-            // Шаг 3.1: Инициализируем свойства значениями параметров
             Code = code;
             Name = name;
             Price = price;
@@ -36,6 +35,18 @@ namespace ShopInventory
         public override string ToString()
         {
             return $"Код: {Code}, " + $"Название: {Name}, Цена: {Price:C}, Количество: {Quantity}, " + $"В наличии: {(InStock ? "Да" : "Нет")}, Категория: {Category}";
+        }
+    }
+
+    public class InventoryManager
+    {
+        private List<Product> products;     
+        private int nextProductId;        
+
+        public InventoryManager()
+        {
+            products = new List<Product>();
+            nextProductId = 1001;
         }
     }
 }
